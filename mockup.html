@@ -1,0 +1,1218 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Tu Corredora] | Corredores de Seguros en Chile</title>
+  <meta name="description" content="Corredores de seguros para personas y empresas en Chile.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1a1d2e;
+      background: #fff;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased
+    }
+
+    img {
+      display: block;
+      max-width: 100%
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit
+    }
+
+    ul {
+      list-style: none
+    }
+
+    :root {
+      --primary: #0f3460;
+      --primary-light: #1a4d8a;
+      --accent: #16c98d;
+      --accent-dark: #12a875;
+      --n50: #f8fafc;
+      --n100: #f1f5f9;
+      --n200: #e2e8f0;
+      --n400: #94a3b8;
+      --n600: #475569;
+      --n800: #1e293b;
+      --white: #fff;
+      --radius: 10px;
+      --sh-sm: 0 1px 3px rgba(0, 0, 0, .08);
+      --sh-md: 0 4px 16px rgba(0, 0, 0, .10);
+      --sh-lg: 0 16px 40px rgba(0, 0, 0, .12)
+    }
+
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 28px
+    }
+
+    section {
+      padding: 80px 0
+    }
+
+    .mockup-banner {
+      background: linear-gradient(135deg, #f59e0b, #ef4444);
+      color: #fff;
+      text-align: center;
+      padding: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: .02em;
+      position: sticky;
+      top: 0;
+      z-index: 101
+    }
+
+    header {
+      position: sticky;
+      top: 41px;
+      z-index: 100;
+      background: rgba(255, 255, 255, .92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--n200)
+    }
+
+    .hi {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 68px;
+      gap: 24px
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--primary);
+      letter-spacing: -.02em
+    }
+
+    .logo-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--primary);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 18px
+    }
+
+    nav.mn {
+      display: flex;
+      align-items: center;
+      gap: 4px
+    }
+
+    nav.mn a {
+      padding: 8px 14px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--n600);
+      border-radius: 8px;
+      transition: color .15s, background .15s
+    }
+
+    nav.mn a:hover {
+      color: var(--primary);
+      background: var(--n100)
+    }
+
+    .ha {
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: var(--radius);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all .2s
+    }
+
+    .btn-ol {
+      background: transparent;
+      border: 1.5px solid var(--n200);
+      color: var(--n600)
+    }
+
+    .btn-ol:hover {
+      border-color: var(--primary);
+      color: var(--primary)
+    }
+
+    .btn-pr {
+      background: var(--accent);
+      color: #fff
+    }
+
+    .btn-pr:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(22, 201, 141, .35)
+    }
+
+    .btn-wa {
+      background: #25D366;
+      color: #fff
+    }
+
+    .btn-wa:hover {
+      background: #20bd5a;
+      transform: translateY(-1px)
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #1a3a6e 60%, #0a2744 100%);
+      color: #fff;
+      padding: 100px 0 80px;
+      position: relative;
+      overflow: hidden
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 80% 50%, rgba(22, 201, 141, .12) 0%, transparent 60%)
+    }
+
+    .hg {
+      display: grid;
+      grid-template-columns: 1fr 420px;
+      gap: 64px;
+      align-items: center;
+      position: relative;
+      z-index: 1
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, .1);
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 100px;
+      padding: 6px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      color: var(--accent)
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -.03em;
+      margin-bottom: 20px;
+      color: #fff
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      color: var(--accent)
+    }
+
+    .hero p.lead {
+      font-size: 18px;
+      color: rgba(255, 255, 255, .72);
+      max-width: 44ch;
+      margin-bottom: 36px;
+      line-height: 1.65
+    }
+
+    .hcta {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap
+    }
+
+    .ht {
+      display: flex;
+      gap: 28px;
+      margin-top: 44px;
+      flex-wrap: wrap
+    }
+
+    .ti {
+      border-left: 2px solid var(--accent);
+      padding-left: 14px
+    }
+
+    .ti strong {
+      display: block;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff
+    }
+
+    .ti span {
+      font-size: 12px;
+      color: rgba(255, 255, 255, .55)
+    }
+
+    .cc {
+      background: #fff;
+      border-radius: 16px;
+      padding: 36px 30px;
+      box-shadow: var(--sh-lg);
+      color: var(--n800)
+    }
+
+    .cc h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: var(--primary)
+    }
+
+    .cc .sub {
+      font-size: 13px;
+      color: var(--n400);
+      margin-bottom: 24px
+    }
+
+    .fg {
+      margin-bottom: 14px
+    }
+
+    .fg label {
+      display: block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--n600);
+      margin-bottom: 5px
+    }
+
+    .fg input,
+    .fg select {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1.5px solid var(--n200);
+      border-radius: 8px;
+      font-size: 14px;
+      font-family: inherit;
+      color: var(--n800);
+      outline: none;
+      transition: border-color .15s
+    }
+
+    .fg input:focus,
+    .fg select:focus {
+      border-color: var(--accent)
+    }
+
+    .bs {
+      width: 100%;
+      padding: 13px;
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .2s;
+      margin-top: 6px
+    }
+
+    .bs:hover {
+      background: var(--accent-dark)
+    }
+
+    .fl {
+      font-size: 11px;
+      color: var(--n400);
+      text-align: center;
+      margin-top: 10px
+    }
+
+    .fl a {
+      color: var(--accent)
+    }
+
+    .sl {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px
+    }
+
+    .st {
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -.02em;
+      margin-bottom: 14px
+    }
+
+    .sd {
+      font-size: 16px;
+      color: var(--n600);
+      max-width: 52ch;
+      line-height: 1.65
+    }
+
+    .sh {
+      margin-bottom: 52px
+    }
+
+    .cg {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px
+    }
+
+    .cc2 {
+      background: var(--primary);
+      border-radius: 16px;
+      padding: 40px 36px;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s
+    }
+
+    .cc2:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--sh-lg)
+    }
+
+    .cc2::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .06)
+    }
+
+    .cc2.emp {
+      background: var(--n800)
+    }
+
+    .ci {
+      font-size: 40px;
+      margin-bottom: 18px
+    }
+
+    .cc2 h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 8px
+    }
+
+    .cc2 p {
+      font-size: 14px;
+      color: rgba(255, 255, 255, .65);
+      margin-bottom: 24px;
+      line-height: 1.6
+    }
+
+    .ctags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px
+    }
+
+    .ctag {
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .18);
+      border-radius: 100px;
+      padding: 4px 12px;
+      font-size: 12px;
+      font-weight: 500
+    }
+
+    .ccat {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 24px;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--accent)
+    }
+
+    .bgl {
+      background: var(--n50)
+    }
+
+    .sgg {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px
+    }
+
+    .sc {
+      background: #fff;
+      border: 1.5px solid var(--n200);
+      border-radius: 12px;
+      padding: 26px 22px;
+      transition: all .2s;
+      cursor: pointer
+    }
+
+    .sc:hover {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 4px rgba(22, 201, 141, .08);
+      transform: translateY(-2px)
+    }
+
+    .si {
+      width: 48px;
+      height: 48px;
+      background: var(--n100);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 14px;
+      transition: background .2s
+    }
+
+    .sc:hover .si {
+      background: rgba(22, 201, 141, .12)
+    }
+
+    .sc h4 {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 6px
+    }
+
+    .sc p {
+      font-size: 13px;
+      color: var(--n400);
+      line-height: 1.5
+    }
+
+    .slink {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--accent);
+      margin-top: 14px
+    }
+
+    .wg {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px 60px
+    }
+
+    .wi {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start
+    }
+
+    .wn {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      background: var(--primary);
+      border-radius: 10px;
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .wc h4 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 6px
+    }
+
+    .wc p {
+      font-size: 14px;
+      color: var(--n600);
+      line-height: 1.6
+    }
+
+    .tb {
+      background: var(--primary);
+      padding: 32px 0
+    }
+
+    .tbi {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap
+    }
+
+    .tbit {
+      text-align: center;
+      color: #fff
+    }
+
+    .tbit strong {
+      display: block;
+      font-size: 28px;
+      font-weight: 700
+    }
+
+    .tbit span {
+      font-size: 12px;
+      color: rgba(255, 255, 255, .55)
+    }
+
+    .tbd {
+      width: 1px;
+      height: 40px;
+      background: rgba(255, 255, 255, .15)
+    }
+
+    .cs {
+      background: var(--n50)
+    }
+
+    .cgr {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start
+    }
+
+    .ci2 h2 {
+      font-size: 34px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 14px
+    }
+
+    .ci2 p {
+      font-size: 16px;
+      color: var(--n600);
+      margin-bottom: 36px
+    }
+
+    .cis {
+      display: flex;
+      flex-direction: column;
+      gap: 20px
+    }
+
+    .cit {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start
+    }
+
+    .citico {
+      width: 44px;
+      height: 44px;
+      flex-shrink: 0;
+      border-radius: 10px;
+      background: #fff;
+      border: 1.5px solid var(--n200);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px
+    }
+
+    .cittx strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--primary)
+    }
+
+    .cittx span {
+      font-size: 13px;
+      color: var(--n400)
+    }
+
+    .cfb {
+      background: #fff;
+      border: 1.5px solid var(--n200);
+      border-radius: 16px;
+      padding: 36px
+    }
+
+    footer {
+      background: var(--n800);
+      color: rgba(255, 255, 255, .7);
+      padding: 56px 0 32px
+    }
+
+    .fg2 {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px
+    }
+
+    .fb p {
+      font-size: 13px;
+      line-height: 1.7;
+      max-width: 28ch
+    }
+
+    .fcmf {
+      margin-top: 20px;
+      font-size: 11px;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: inline-block
+    }
+
+    .fcmf strong {
+      color: var(--accent)
+    }
+
+    .fc h4 {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: #fff;
+      margin-bottom: 16px
+    }
+
+    .fc ul li {
+      margin-bottom: 10px
+    }
+
+    .fc ul li a {
+      font-size: 13px;
+      color: rgba(255, 255, 255, .55);
+      transition: color .15s
+    }
+
+    .fc ul li a:hover {
+      color: var(--accent)
+    }
+
+    .fbot {
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12px;
+      flex-wrap: wrap;
+      gap: 12px
+    }
+
+    .fsoc {
+      display: flex;
+      gap: 10px
+    }
+
+    .sb {
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(255, 255, 255, .15);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .15s;
+      color: rgba(255, 255, 255, .6)
+    }
+
+    .sb:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff
+    }
+
+    .wa {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, .5);
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+      animation: pw 2.5s ease-in-out infinite
+    }
+
+    .wa:hover {
+      transform: scale(1.1)
+    }
+
+    @keyframes pw {
+
+      0%,
+      100% {
+        box-shadow: 0 4px 20px rgba(37, 211, 102, .5)
+      }
+
+      50% {
+        box-shadow: 0 4px 30px rgba(37, 211, 102, .8), 0 0 0 8px rgba(37, 211, 102, .1)
+      }
+    }
+
+    .tg {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px
+    }
+
+    .tc {
+      background: #fff;
+      border: 1.5px solid var(--n200);
+      border-radius: 14px;
+      padding: 28px
+    }
+
+    .tcs {
+      color: #f59e0b;
+      font-size: 14px;
+      margin-bottom: 12px
+    }
+
+    .tc p {
+      font-size: 14px;
+      color: var(--n600);
+      line-height: 1.65;
+      margin-bottom: 20px;
+      font-style: italic
+    }
+
+    .ta {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--primary)
+    }
+
+    .tr {
+      font-size: 12px;
+      color: var(--n400)
+    }
+
+    @media(max-width:900px) {
+      .hg {
+        grid-template-columns: 1fr
+      }
+
+      .cc {
+        display: none
+      }
+
+      .cg {
+        grid-template-columns: 1fr
+      }
+
+      .sgg {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .cgr {
+        grid-template-columns: 1fr
+      }
+
+      .fg2 {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .wg {
+        grid-template-columns: 1fr
+      }
+    }
+
+    @media(max-width:600px) {
+      .hero h1 {
+        font-size: 32px
+      }
+
+      .st {
+        font-size: 26px
+      }
+
+      .sgg {
+        grid-template-columns: 1fr
+      }
+
+      .tg {
+        grid-template-columns: 1fr
+      }
+
+      nav.mn {
+        display: none
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mockup-banner">🎨 MOCKUP — Corredora de Seguros — Diseño "Menos es Más"</div>
+  <header>
+    <div class="container">
+      <div class="hi">
+        <a href="#" class="logo">
+          <div class="logo-icon">🛡</div>TuCorredora
+        </a>
+        <nav class="mn">
+          <a href="#seguros">Seguros</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#siniestros">Siniestros</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+        <div class="ha">
+          <a href="tel:+5699999999" class="btn btn-ol">📞 +56 9 9999 9999</a>
+          <a href="#" class="btn btn-wa">💬 WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section class="hero">
+    <div class="container">
+      <div class="hg">
+        <div>
+          <div class="hero-eyebrow">✦ Inscritos en CMF N° XXXX</div>
+          <h1>Tu seguro,<br>sin <em>complicaciones</em>.</h1>
+          <p class="lead">Comparamos coberturas de múltiples compañías y te acompañamos en todo el proceso, incluso
+            cuando necesitas cobrar.</p>
+          <div class="hcta">
+            <a href="#contacto" class="btn btn-pr" style="padding:14px 28px;font-size:15px">Cotizar ahora →</a>
+            <a href="#seguros" class="btn btn-ol"
+              style="padding:14px 28px;font-size:15px;border-color:rgba(255,255,255,.25);color:rgba(255,255,255,.8)">Ver
+              seguros</a>
+          </div>
+          <div class="ht">
+            <div class="ti"><strong>+20 años</strong><span>de experiencia</span></div>
+            <div class="ti"><strong>+3.000</strong><span>clientes activos</span></div>
+            <div class="ti"><strong>+15</strong><span>aseguradoras</span></div>
+          </div>
+        </div>
+        <div class="cc">
+          <h3>Cotiza en minutos</h3>
+          <p class="sub">Sin compromiso — respuesta en el día</p>
+          <form>
+            <div class="fg"><label>Nombre completo</label><input type="text" placeholder="Ej: María González"></div>
+            <div class="fg"><label>Teléfono / WhatsApp</label><input type="tel" placeholder="+56 9 XXXX XXXX"></div>
+            <div class="fg"><label>¿Qué seguro necesitas?</label>
+              <select>
+                <option value="">Selecciona un tipo...</option>
+                <option>Seguro de Auto</option>
+                <option>Seguro de Hogar</option>
+                <option>Seguro de Vida</option>
+                <option>Seguro para Empresa</option>
+                <option>Responsabilidad Civil</option>
+                <option>Otro</option>
+              </select>
+            </div>
+            <button type="submit" class="bs">Solicitar cotización gratuita ✓</button>
+            <p class="fl">Al enviar aceptas nuestra <a href="#">política de privacidad</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="seguros">
+    <div class="container">
+      <div class="sh">
+        <div class="sl">Nuestros servicios</div>
+        <h2 class="st">¿Para quién buscas el seguro?</h2>
+        <p class="sd">Accede directamente a la categoría que necesitas. Cotiza en minutos.</p>
+      </div>
+      <div class="cg">
+        <div class="cc2">
+          <div class="ci">👤</div>
+          <h3>Personas</h3>
+          <p>Protege tu hogar, vehículo, salud y familia con coberturas a tu medida.</p>
+          <div class="ctags">
+            <span class="ctag">Auto</span><span class="ctag">Hogar</span>
+            <span class="ctag">Vida</span><span class="ctag">Salud</span><span class="ctag">Viaje</span>
+          </div>
+          <div class="ccat">Ver seguros para personas →</div>
+        </div>
+        <div class="cc2 emp">
+          <div class="ci">🏢</div>
+          <h3>Empresas</h3>
+          <p>Cobertura integral para tu negocio: flotas, cargas, responsabilidad civil y más.</p>
+          <div class="ctags">
+            <span class="ctag">Flotas</span><span class="ctag">Carga</span>
+            <span class="ctag">Resp. Civil</span><span class="ctag">Garantías</span>
+          </div>
+          <div class="ccat">Ver seguros para empresas →</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="bgl">
+    <div class="container">
+      <div class="sh">
+        <div class="sl">Accesos directos</div>
+        <h2 class="st">Seguros más solicitados</h2>
+      </div>
+      <div class="sgg">
+        <div class="sc">
+          <div class="si">🚗</div>
+          <h4>Seguro de Auto</h4>
+          <p>Cobertura para tu vehículo particular o comercial.</p><span class="slink">Cotizar →</span>
+        </div>
+        <div class="sc">
+          <div class="si">🏠</div>
+          <h4>Seguro de Hogar</h4>
+          <p>Protege tu casa o departamento ante cualquier siniestro.</p><span class="slink">Cotizar →</span>
+        </div>
+        <div class="sc">
+          <div class="si">❤️</div>
+          <h4>Seguro de Vida</h4>
+          <p>Protección financiera para ti y tu familia.</p><span class="slink">Cotizar →</span>
+        </div>
+        <div class="sc">
+          <div class="si">🏥</div>
+          <h4>Salud Complementario</h4>
+          <p>Reembolso de gastos médicos para ti o tu empresa.</p><span class="slink">Cotizar →</span>
+        </div>
+        <div class="sc">
+          <div class="si">🛡️</div>
+          <h4>Responsabilidad Civil</h4>
+          <p>Cubre daños a terceros en tu actividad o empresa.</p><span class="slink">Cotizar →</span>
+        </div>
+        <div class="sc">
+          <div class="si">✈️</div>
+          <h4>Asistencia en Viaje</h4>
+          <p>Viaja tranquilo con cobertura internacional completa.</p><span class="slink">Cotizar →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="nosotros">
+    <div class="container">
+      <div class="sh">
+        <div class="sl">Nuestra propuesta</div>
+        <h2 class="st">¿Por qué elegirnos?</h2>
+        <p class="sd">Somos corredores independientes. Trabajamos para ti, no para las aseguradoras.</p>
+      </div>
+      <div class="wg">
+        <div class="wi">
+          <div class="wn">01</div>
+          <div class="wc">
+            <h4>Comparamos el mercado por ti</h4>
+            <p>Cotizamos con múltiples compañías y te presentamos las mejores opciones de cobertura y precio.</p>
+          </div>
+        </div>
+        <div class="wi">
+          <div class="wn">02</div>
+          <div class="wc">
+            <h4>Sin letra chica, sin sorpresas</h4>
+            <p>Te explicamos exactamente qué cubre tu póliza y qué no, antes de contratar.</p>
+          </div>
+        </div>
+        <div class="wi">
+          <div class="wn">03</div>
+          <div class="wc">
+            <h4>Te acompañamos en los siniestros</h4>
+            <p>Cuando lo necesitas, gestionamos tu siniestro para que cobres lo que corresponde.</p>
+          </div>
+        </div>
+        <div class="wi">
+          <div class="wn">04</div>
+          <div class="wc">
+            <h4>Atención personalizada y directa</h4>
+            <p>Siempre hablas con una persona real. Sin bots, sin call centers, sin filas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="tb">
+    <div class="container">
+      <div class="tbi">
+        <div class="tbit"><strong>+20</strong><span>Años de experiencia</span></div>
+        <div class="tbd"></div>
+        <div class="tbit"><strong>+3.000</strong><span>Clientes atendidos</span></div>
+        <div class="tbd"></div>
+        <div class="tbit"><strong>+15</strong><span>Compañías</span></div>
+        <div class="tbd"></div>
+        <div class="tbit"><strong>CMF</strong><span>N° XXXX</span></div>
+        <div class="tbd"></div>
+        <div class="tbit"><strong>ACOSEG</strong><span>Miembro activo</span></div>
+      </div>
+    </div>
+  </div>
+  <section class="bgl">
+    <div class="container">
+      <div class="sh">
+        <div class="sl">Testimonios</div>
+        <h2 class="st">Lo que dicen nuestros clientes</h2>
+      </div>
+      <div class="tg">
+        <div class="tc">
+          <div class="tcs">★★★★★</div>
+          <p>"En menos de una hora tenía mi cotización y las opciones bien explicadas. Contratamos sin complicaciones."
+          </p>
+          <div class="ta">Carlos Fernández</div>
+          <div class="tr">Gerente General, Transportes CF</div>
+        </div>
+        <div class="tc">
+          <div class="tcs">★★★★★</div>
+          <p>"Cuando tuve un siniestro, ellos hicieron todo el proceso. Me llamaban para avisarme cómo iba todo."</p>
+          <div class="ta">Ana Muñoz</div>
+          <div class="tr">Clienta particular</div>
+        </div>
+        <div class="tc">
+          <div class="tcs">★★★★★</div>
+          <p>"Llevamos 5 años trabajando juntos. Siempre encuentran buenas opciones para nuestros seguros."</p>
+          <div class="ta">Pablo Rodríguez</div>
+          <div class="tr">Director, Constructora PR</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contacto" class="cs">
+    <div class="container">
+      <div class="cgr">
+        <div class="ci2">
+          <div class="sl">Contáctanos</div>
+          <h2>Hablemos de tu seguro</h2>
+          <p>Sin compromiso. Te respondemos el mismo día hábil.</p>
+          <div class="cis">
+            <div class="cit">
+              <div class="citico">💬</div>
+              <div class="cittx"><strong>WhatsApp</strong><span>+56 9 9999 9999</span></div>
+            </div>
+            <div class="cit">
+              <div class="citico">📞</div>
+              <div class="cittx"><strong>Teléfono</strong><span>+56 2 XXXX XXXX · Lun–Vie 9:00–18:00</span></div>
+            </div>
+            <div class="cit">
+              <div class="citico">📧</div>
+              <div class="cittx"><strong>Email</strong><span>contacto@tucorredora.cl</span></div>
+            </div>
+            <div class="cit">
+              <div class="citico">📍</div>
+              <div class="cittx"><strong>Oficina</strong><span>Av. Principal 1234, Of. 502 — Santiago</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="cfb">
+          <h3 style="font-size:18px;font-weight:700;color:var(--primary);margin-bottom:4px">Envíanos un mensaje</h3>
+          <p style="font-size:13px;color:var(--n400);margin-bottom:24px">Respuesta garantizada en el día</p>
+          <form>
+            <div class="fg"><label>Nombre</label><input type="text" placeholder="Tu nombre completo"></div>
+            <div class="fg"><label>Email</label><input type="email" placeholder="tu@email.cl"></div>
+            <div class="fg"><label>Teléfono</label><input type="tel" placeholder="+56 9 XXXX XXXX"></div>
+            <div class="fg"><label>¿En qué podemos ayudarte?</label><input type="text"
+                placeholder="Ej: Necesito cotizar seguro de hogar"></div>
+            <button type="submit" class="bs">Enviar mensaje →</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <div class="fg2">
+        <div class="fb">
+          <div class="logo" style="color:#fff;margin-bottom:12px">
+            <div class="logo-icon">🛡</div>TuCorredora
+          </div>
+          <p>Corredores independientes. Buscamos la mejor cobertura al mejor precio para ti.</p>
+          <div class="fcmf"><strong>CMF N° XXXX</strong> · Verifica en <a href="https://cmfchile.cl"
+              style="color:var(--accent)">cmfchile.cl</a></div>
+        </div>
+        <div class="fc">
+          <h4>Seguros</h4>
+          <ul>
+            <li><a href="#">Personas</a></li>
+            <li><a href="#">Empresas</a></li>
+            <li><a href="#">Auto y Motos</a></li>
+            <li><a href="#">Hogar</a></li>
+            <li><a href="#">Vida y Salud</a></li>
+            <li><a href="#">Resp. Civil</a></li>
+          </ul>
+        </div>
+        <div class="fc">
+          <h4>Servicio</h4>
+          <ul>
+            <li><a href="#siniestros" id="siniestros">Siniestros</a></li>
+            <li><a href="#">Pago de pólizas</a></li>
+            <li><a href="#">Renovaciones</a></li>
+            <li><a href="#">Quiénes Somos</a></li>
+          </ul>
+        </div>
+        <div class="fc">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Política de Privacidad</a></li>
+            <li><a href="#">Términos y Condiciones</a></li>
+            <li><a href="https://cmfchile.cl">Registro CMF</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="fbot">
+        <span>© 2026 TuCorredora — Todos los derechos reservados</span>
+        <div class="fsoc">
+          <div class="sb">in</div>
+          <div class="sb">ig</div>
+          <div class="sb">wa</div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <a href="#" class="wa" title="WhatsApp">💬</a>
+</body>
+
+</html>
