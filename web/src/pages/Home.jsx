@@ -3,53 +3,10 @@ import {
   ArrowUpRight,
   BadgeCheck,
   BriefcaseBusiness,
-  CarFront,
-  HeartHandshake,
-  House,
-  LifeBuoy,
   ShieldCheck,
   UserRound,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const coverages = [
-  {
-    title: 'Auto',
-    description: 'Protección para tu vehículo y cada trayecto.',
-    icon: CarFront,
-    href: '/seguros#seg-auto',
-  },
-  {
-    title: 'Hogar',
-    description: 'Cuida tu casa, tus cosas y a quienes más quieres.',
-    icon: House,
-    href: '/seguros#seg-hogar',
-  },
-  {
-    title: 'Vida y salud',
-    description: 'Bienestar y respaldo para ti y tu familia.',
-    icon: HeartHandshake,
-    href: '/seguros#seg-vida',
-  },
-];
-
-const advantages = [
-  {
-    title: 'Asesoría independiente',
-    description: 'Revisamos alternativas de distintas compañías para encontrar una cobertura acorde a ti.',
-    icon: ShieldCheck,
-  },
-  {
-    title: 'Acompañamiento cercano',
-    description: 'Te orientamos desde la cotización hasta la contratación y durante la vigencia de tu póliza.',
-    icon: HeartHandshake,
-  },
-  {
-    title: 'Apoyo cuando importa',
-    description: 'Si tienes un siniestro, te ayudamos a entender los pasos y gestionar el proceso.',
-    icon: LifeBuoy,
-  },
-];
 
 export default function Home() {
   return (
@@ -116,60 +73,6 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="home-coverages" aria-labelledby="coverages-title">
-        <div className="container">
-          <div className="home-section-heading">
-            <div>
-              <p className="home-section-kicker">Protección a tu medida</p>
-              <h2 id="coverages-title">Encuentra tu seguro</h2>
-              <p>Accede a algunas de las coberturas más consultadas.</p>
-            </div>
-            <Link to="/seguros" className="home-section-link">
-              Ver todos los seguros <ArrowRight aria-hidden="true" />
-            </Link>
-          </div>
-          <div className="home-coverages-grid">
-            {coverages.map(({ title, description, icon: Icon, href }) => (
-              <Link to={href} className="home-coverage-card" key={title}>
-                <span className="home-coverage-icon"><Icon aria-hidden="true" /></span>
-                <span className="home-coverage-title">{title}</span>
-                <span className="home-coverage-description">{description}</span>
-                <span className="home-coverage-link">Conocer cobertura <ArrowRight aria-hidden="true" /></span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="home-why" aria-labelledby="why-title">
-        <div className="container">
-          <div className="home-section-heading home-why-heading">
-            <div>
-              <p className="home-section-kicker">Un asesor a tu lado</p>
-              <h2 id="why-title">Más que una póliza, tranquilidad.</h2>
-            </div>
-            <p className="home-why-intro">Te ayudamos a tomar una decisión informada y seguimos contigo cuando necesitas orientación.</p>
-          </div>
-          <div className="home-advantages-grid">
-            {advantages.map(({ title, description, icon: Icon }) => (
-              <article className="home-advantage" key={title}>
-                <span className="home-advantage-icon"><Icon aria-hidden="true" /></span>
-                <h3>{title}</h3>
-                <p>{description}</p>
-              </article>
-            ))}
-          </div>
-          <div className="home-contact-banner">
-            <div>
-              <p className="home-contact-kicker">Hablemos de lo que necesitas</p>
-              <h2>Encuentra una cobertura con la que te sientas tranquilo.</h2>
-            </div>
-            <Link to="/contacto" className="btn home-contact-button">
-              Contactar a un asesor <ArrowRight aria-hidden="true" />
-            </Link>
-          </div>
-        </div>
-      </section>
     </>
   );
 }
