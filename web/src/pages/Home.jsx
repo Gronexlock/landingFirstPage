@@ -1,8 +1,8 @@
 import {
-  ArrowRight,
   ArrowUpRight,
   BadgeCheck,
   BriefcaseBusiness,
+  MessageCircle,
   ShieldCheck,
   UserRound,
 } from 'lucide-react';
@@ -25,9 +25,14 @@ export default function Home() {
               Comparamos opciones para personas y empresas, y te acompañamos en cada paso. Así eliges con confianza y sin complicaciones.
             </p>
             <div className="home-hero-actions">
-              <Link to="/contacto" className="btn btn-primary btn-lg">
-                Cotiza con un asesor <ArrowRight aria-hidden="true" />
-              </Link>
+              <a
+                href="https://wa.me/5699999999?text=Hola%2C%20quiero%20cotizar%20un%20seguro."
+                className="btn btn-wa btn-lg"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <MessageCircle aria-hidden="true" /> Cotiza por WhatsApp
+              </a>
               <Link to="/seguros" className="home-text-link">
                 Explorar seguros <ArrowUpRight aria-hidden="true" />
               </Link>

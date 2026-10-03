@@ -44,8 +44,6 @@ export default function Layout() {
               <NavLink to="/contacto" className={({ isActive }) => (isActive ? 'active' : '')} onClick={() => setMobileOpen(false)}>Contacto</NavLink>
             </nav>
             <div className="header-actions">
-              <a href="tel:+5699999999" className="btn btn-ghost" id="btn-header-tel">+56 9 XXXX XXXX</a>
-              <a href="https://wa.me/5699999999" className="btn btn-wa" id="btn-header-wa" target="_blank" rel="noopener noreferrer">WhatsApp</a>
               <button
                 type="button"
                 className="mobile-menu-toggle"
