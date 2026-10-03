@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
-import { NavLink, Link, Outlet, useLocation } from 'react-router-dom';
-import { MessageCircle } from 'lucide-react';
+import { NavLink, Outlet, useLocation } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import WhatsAppIcon from './WhatsAppIcon';
 
 export default function Layout() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -32,19 +34,26 @@ export default function Layout() {
       <header id="main-header" className={scrolled ? 'scrolled' : ''}>
         <div className="container">
           <div className="header-inner">
-            <NavLink to="/" className="logo-wrap" aria-label="Alan Gálvez - Corredor Oficial de Seguros">
+            <NavLink to="/" className="logo-wrap" aria-label="Alan Gálvez - Corredor Oficial de Seguros" onClick={() => setMobileOpen(false)}>
               <img src="/Logos/AlanGalvez-01.png" alt="Alan Gálvez Corredor Oficial de Seguros" />
             </NavLink>
-            <nav className="main-nav" aria-label="Navegación principal">
-              <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')}>Inicio</NavLink>
-              <Link to="/seguros#personas" className={location.pathname === '/seguros' && location.hash !== '#empresas' ? 'active' : ''}>Seguros Personas</Link>
-              <Link to="/seguros#empresas" className={location.pathname === '/seguros' && location.hash === '#empresas' ? 'active' : ''}>Seguros Empresas</Link>
-              <NavLink to="/nosotros" className={({ isActive }) => (isActive ? 'active' : '')}>Nosotros</NavLink>
-              <NavLink to="/contacto" className={({ isActive }) => (isActive ? 'active' : '')}>Contacto</NavLink>
+            <nav id="mobile-navigation" className={`main-nav${mobileOpen ? ' is-open' : ''}`} aria-label="Navegación principal">
+              <NavLink to="/" className={({ isActive }) => (isActive ? 'active' : '')} onClick={() => setMobileOpen(false)}>Inicio</NavLink>
+              <NavLink to="/seguros" className={({ isActive }) => (isActive ? 'active' : '')} onClick={() => setMobileOpen(false)}>Seguros</NavLink>
+              <NavLink to="/nosotros" className={({ isActive }) => (isActive ? 'active' : '')} onClick={() => setMobileOpen(false)}>Nosotros</NavLink>
+              <NavLink to="/contacto" className={({ isActive }) => (isActive ? 'active' : '')} onClick={() => setMobileOpen(false)}>Contacto</NavLink>
             </nav>
             <div className="header-actions">
-              <a href="tel:+5699999999" className="btn btn-ghost" id="btn-header-tel">+56 9 XXXX XXXX</a>
-              <a href="https://wa.me/5699999999" className="btn btn-wa" id="btn-header-wa" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              <button
+                type="button"
+                className="mobile-menu-toggle"
+                aria-label={mobileOpen ? 'Cerrar menú' : 'Abrir menú'}
+                aria-expanded={mobileOpen}
+                aria-controls="mobile-navigation"
+                onClick={() => setMobileOpen((open) => !open)}
+              >
+                {mobileOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+              </button>
             </div>
           </div>
         </div>
@@ -103,7 +112,7 @@ export default function Layout() {
 
       {/* WhatsApp flotante */}
       <a href="https://wa.me/5699999999" className="wa-float" aria-label="Contactar por WhatsApp" target="_blank" rel="noopener noreferrer">
-        <MessageCircle color="#fff" size={26} />
+        <WhatsAppIcon className="whatsapp-icon" />
       </a>
     </>
   );
