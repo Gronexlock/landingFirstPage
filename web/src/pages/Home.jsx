@@ -2,11 +2,11 @@ import {
   ArrowUpRight,
   BadgeCheck,
   BriefcaseBusiness,
-  MessageCircle,
   ShieldCheck,
   UserRound,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import WhatsAppIcon from '../components/WhatsAppIcon';
 
 export default function Home() {
   return (
@@ -31,7 +31,7 @@ export default function Home() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <MessageCircle aria-hidden="true" /> Cotiza por WhatsApp
+                <WhatsAppIcon className="whatsapp-icon" /> Cotiza por WhatsApp
               </a>
               <Link to="/seguros" className="home-text-link">
                 Explorar seguros <ArrowUpRight aria-hidden="true" />

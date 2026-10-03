@@ -868,7 +868,7 @@ footer {
 }
 
 .wa-float:hover { transform: scale(1.08); }
-.wa-float svg { width: 26px; height: 26px; fill: #fff; }
+.wa-float .whatsapp-icon { width: 30px; height: 30px; color: #fff; }
 
 @keyframes wa-pulse {
   0%, 100% { box-shadow: 0 4px 18px rgba(37,211,102,.45); }
@@ -962,6 +962,7 @@ section.home-hero {
 .home-hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 24px; }
 .home-hero-actions .btn svg,
 .home-text-link svg { width: 18px; height: 18px; }
+.home-hero-actions .btn .whatsapp-icon { width: 23px; height: 23px; flex: 0 0 auto; }
 .home-text-link {
   display: inline-flex;
   align-items: center;
